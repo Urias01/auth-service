@@ -1,5 +1,6 @@
 import { NestFactory } from '@nestjs/core'
 import { AppModule } from './app.module'
+import "reflect-metadata"
 import * as dotenv from 'dotenv'
 dotenv.config()
 
