@@ -1,23 +1,23 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { User } from "./user.entity";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
+import { User } from './user.entity'
 
 @Entity('addresses')
 export class Address {
   @PrimaryGeneratedColumn()
-  id: number;
+  id: number
 
   @Column({ type: 'varchar', length: 255 })
-  street: string;
+  street: string
 
   @Column({ type: 'varchar', length: 100 })
-  city: string;
+  city: string
 
   @Column({ type: 'varchar', length: 100 })
-  state: string;
+  state: string
 
   @Column({ type: 'varchar', length: 20 })
-  postalCode: string;
+  postalCode: string
 
   @ManyToOne(() => User, (user) => user.addresses)
-  user: User;
+  user: User
 }

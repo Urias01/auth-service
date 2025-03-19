@@ -21,7 +21,7 @@
       "console": "integratedTerminal",
       "envFile": "${workspaceFolder}/.env",
       "env": {
-        "PG_DATABASE": "restaurant-develop"
+        "PG_DATABASE": "restaurant-develop",
       }
     }
   ]

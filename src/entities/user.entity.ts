@@ -1,10 +1,9 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { UserRole } from "./enums/user-role.enum";
-import { Address } from "./address.entity";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm'
+import { UserRole } from './enums/user-role.enum'
+import { Address } from './address.entity'
 
-@Entity("users")
+@Entity('users')
 export class User {
-
   @PrimaryGeneratedColumn()
   id: number
 
@@ -12,18 +11,17 @@ export class User {
   name: string
 
   @Column({ type: 'varchar', unique: true, length: 100 })
-  email: string;
+  email: string
 
   @Column({ type: 'varchar', length: 100 })
-  password: string;
+  password: string
 
   @Column({ type: 'varchar', length: 50, default: UserRole.CUSTOMER })
-  role: UserRole;
+  role: UserRole
 
   @Column({ type: 'varchar', length: 100, nullable: true })
-  phone: string;
+  phone?: string
 
-  
   @OneToMany(() => Address, (address) => address.user)
-  addresses: Address[];
+  addresses: Address[]
 }
